@@ -1,11 +1,12 @@
 
-//....connection with search button....//
+//....connection with search button....
 
 
 const searchButton = document.getElementById('searchBtn');
 
 searchButton.addEventListener("click", function(){
 
+    document.getElementById('foodDetails').innerHTML = '';
     const foodName = document.getElementById('inputField').value;
     if(foodName ==""){
         return
@@ -15,7 +16,7 @@ searchButton.addEventListener("click", function(){
     .then(data => {
         
 
-        //....no food found connection with js...//
+        //....no food found connection with js...
 
         const foodItems = data.meals;
         if(foodItems === null){
@@ -30,7 +31,7 @@ searchButton.addEventListener("click", function(){
         foodItems.forEach(food => {
             
             
-            //... showing main meanu...///
+            //... showing main meanu with food name...
 
             const foodTitle = food.strMeal;
             
@@ -46,9 +47,9 @@ searchButton.addEventListener("click", function(){
     });
 });
 
-//...showing food details...//
+//...showing food details...
 
-function itemDetails(foodId){
+const itemDetails = (foodId)=>{
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`)
     .then(res => res.json())
     .then(data => {
@@ -74,7 +75,7 @@ function itemDetails(foodId){
                                     </ul>
         `;
     });
-    //
+    
 }
 
 
