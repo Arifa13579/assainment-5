@@ -32,3 +32,12 @@
 #noFoodFound{
     display: none;
 }
+
+.msgText{
+    margin-top: 100px;
+    margin-left: 150px;
+    display: inline-block;
+}
+#noFoodFound{
+    border-radius: 10px;
+}

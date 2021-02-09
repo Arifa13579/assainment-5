@@ -21,6 +21,8 @@ searchButton.addEventListener("click", function(){
         const foodItems = data.meals;
         if(foodItems === null){
             document.getElementById("noFoodFound").style.display = "block";
+            document.getElementById("foodItems").innerHTML = "";
+
             return;
         }else{
             document.getElementById("noFoodFound").style.display = "none";
